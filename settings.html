@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Settings - Desire</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .settings-form {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .settings-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .settings-section:last-child {
+      border-bottom: none;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .form-check {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body class="settings-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Desire</h1><span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="clientsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Clients</a>
+            <ul class="dropdown-menu" aria-labelledby="clientsDropdown">
+              <li><a class="dropdown-item" href="placement.html">Placement Resources</a></li>
+              <li><a class="dropdown-item" href="interview-questions.html">Interview Questions</a></li>
+              <li><a class="dropdown-item" href="domain-related.html">Domain Related Links</a></li>
+              <li><a class="dropdown-item" href="testimonials.html">Client Testimonials</a></li>
+              <li><a class="dropdown-item" href="case-studies.html">Case Studies</a></li>
+              <li><a class="dropdown-item" href="success-stories.html">Client Success Stories</a></li>
+              <li><a class="dropdown-item" href="onboarding-resources.html">Client Onboarding Resources</a></li>
+            </ul>
+          </li>
+          <li><a href="dashboard.html">Progress Dashboard</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="settings-form card">
+            <div class="card-body">
+              <h5 class="card-title">Settings</h5>
+
+              <form id="settingsForm">
+                <!-- Account Settings -->
+                <div class="settings-section">
+                  <h6 class="mb-3">Account Settings</h6>
+                  <div class="mb-3">
+                    <label class="form-label">Change Password</label>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <input type="password" class="form-control" id="currentPassword" placeholder="Current Password">
+                      </div>
+                      <div class="col-md-4">
+                        <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+                      </div>
+                      <div class="col-md-4">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="settings-section">
+                  <h6 class="mb-3">Notification Settings</h6>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="emailNotifications">
+                    <label class="form-check-label" for="emailNotifications">
+                      Email Notifications
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="quizReminders">
+                    <label class="form-check-label" for="quizReminders">
+                      Quiz Reminders
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="progressUpdates">
+                    <label class="form-check-label" for="progressUpdates">
+                      Progress Updates
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Privacy Settings -->
+                <div class="settings-section">
+                  <h6 class="mb-3">Privacy Settings</h6>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="profileVisibility">
+                    <label class="form-check-label" for="profileVisibility">
+                      Make Profile Public
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="showProgress">
+                    <label class="form-check-label" for="showProgress">
+                      Show Progress to Others
+                    </label>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Desire</span>
+          </a>
+          <p>Empowering students with comprehensive interview preparation resources and tools.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Email: support@desire.com</p>
+          <p>Phone: +91 9553249123</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="sitename">Desire</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Hide preloader once page is loaded
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.remove();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load user data and settings
+      const userData = localStorage.getItem('userData');
+      if (userData) {
+        const user = JSON.parse(userData);
+        if (user.settings) {
+          // Update checkboxes with saved settings
+          document.getElementById('emailNotifications').checked = user.settings.emailNotifications ?? true;
+          document.getElementById('quizReminders').checked = user.settings.quizReminders ?? true;
+          document.getElementById('progressUpdates').checked = user.settings.progressUpdates ?? true;
+          document.getElementById('profileVisibility').checked = user.settings.profileVisibility ?? true;
+          document.getElementById('showProgress').checked = user.settings.showProgress ?? true;
+        }
+      } else {
+        // Redirect to login if no user data
+        window.location.href = 'index.html';
+      }
+
+      // Handle settings form submission
+      const settingsForm = document.getElementById('settingsForm');
+      if (settingsForm) {
+        settingsForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const user = JSON.parse(localStorage.getItem('userData') || '{}');
+          
+          // Handle password change if provided
+          const currentPassword = document.getElementById('currentPassword').value;
+          const newPassword = document.getElementById('newPassword').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
+
+          if (currentPassword && newPassword) {
+            if (newPassword !== confirmPassword) {
+              alert('New passwords do not match!');
+              return;
+            }
+            user.password = newPassword;
+          }
+
+          // Update settings
+          user.settings = {
+            emailNotifications: document.getElementById('emailNotifications').checked,
+            quizReminders: document.getElementById('quizReminders').checked,
+            progressUpdates: document.getElementById('progressUpdates').checked,
+            profileVisibility: document.getElementById('profileVisibility').checked,
+            showProgress: document.getElementById('showProgress').checked
+          };
+
+          localStorage.setItem('userData', JSON.stringify(user));
+          alert('Settings updated successfully!');
+          window.location.href = 'index.html';
+        });
+      }
+    });
+
+    // Handle profile logo in navigation
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      const user = JSON.parse(userData);
+      if (user && user.name) {
+        const profileLogo = document.querySelector('#profileLogo span');
+        if (profileLogo) {
+          profileLogo.textContent = user.name.charAt(0).toUpperCase();
+        }
+      }
+    }
+
+    // Handle logout
+    function handleLogout() {
+      localStorage.removeItem('userData');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+
+</html>

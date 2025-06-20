@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Student Dashboard - Learning Progress</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Add Chart.js -->
+  <link href="https://cdn.jsdelivr.net/npm/chart.js" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1>Append</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="clientsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Clients</a>
+            <ul class="dropdown-menu" aria-labelledby="clientsDropdown">
+              <li><a class="dropdown-item" href="placement.html">Placement Resources</a></li>
+              <li><a class="dropdown-item" href="interview-questions.html">Interview Questions</a></li>
+              <li><a class="dropdown-item" href="domain-related.html">Domain Related Links</a></li>
+            </ul>
+          </li>
+          <li><a href="dashboard.html" class="active">Progress Dashboard</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Student Dashboard</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Dashboard</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Dashboard Section ======= -->
+    <section class="dashboard section">
+      <div class="container">
+        
+        <!-- Progress Overview Cards -->
+        <div class="row mb-4">
+          <div class="col-md-3">
+            <div class="card progress-card" data-aos="fade-up">
+              <div class="card-body">
+                <h5>Overall Progress</h5>
+                <div class="progress-circle">
+                  <span class="progress-value">75%</span>
+                </div>
+                <p class="text-muted">Learning Path Completion</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card progress-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5>Practice Tests</h5>
+                <div class="progress-stats">
+                  <h3>28/35</h3>
+                  <p class="text-success">+5 this week</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card progress-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h5>Mock Interviews</h5>
+                <div class="progress-stats">
+                  <h3>8/10</h3>
+                  <p class="text-success">Above Average</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card progress-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body">
+                <h5>Skill Score</h5>
+                <div class="progress-stats">
+                  <h3>820</h3>
+                  <p class="text-success">Top 15%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Path Progress -->
+        <div class="row mb-4">
+          <div class="col-lg-8">
+            <div class="card" data-aos="fade-up">
+              <div class="card-body">
+                <h5 class="card-title">Learning Path Progress</h5>
+                <div class="learning-path-progress">
+                  <div class="path-item completed">
+                    <div class="path-icon"><i class="bi bi-check-circle-fill"></i></div>
+                    <div class="path-content">
+                      <h6>Fundamentals</h6>
+                      <p>Basic concepts and foundation</p>
+                    </div>
+                  </div>
+                  <div class="path-item completed">
+                    <div class="path-icon"><i class="bi bi-check-circle-fill"></i></div>
+                    <div class="path-content">
+                      <h6>Advanced Concepts</h6>
+                      <p>In-depth technical knowledge</p>
+                    </div>
+                  </div>
+                  <div class="path-item active">
+                    <div class="path-icon"><i class="bi bi-arrow-right-circle-fill"></i></div>
+                    <div class="path-content">
+                      <h6>Interview Preparation</h6>
+                      <p>Mock interviews and problem solving</p>
+                    </div>
+                  </div>
+                  <div class="path-item">
+                    <div class="path-icon"><i class="bi bi-circle"></i></div>
+                    <div class="path-content">
+                      <h6>Industry Projects</h6>
+                      <p>Real-world project experience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title">Recommended Focus Areas</h5>
+                <ul class="focus-areas">
+                  <li>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>System Design Principles</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>Data Structures</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>Algorithm Optimization</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Analytics -->
+        <div class="row mb-4">
+          <div class="col-lg-6">
+            <div class="card" data-aos="fade-up">
+              <div class="card-body">
+                <h5 class="card-title">Performance Analytics</h5>
+                <canvas id="performanceChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title">Skill Distribution</h5>
+                <canvas id="skillChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activities and Feedback -->
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="card" data-aos="fade-up">
+              <div class="card-body">
+                <h5 class="card-title">Recent Activities</h5>
+                <div class="activity-timeline">
+                  <div class="activity-item">
+                    <div class="activity-content">
+                      <div class="activity-icon bg-success">
+                        <i class="bi bi-check-lg"></i>
+                      </div>
+                      <h6>Completed System Design Mock Interview</h6>
+                      <p>Score: 85/100 - Excellent understanding of scalability concepts</p>
+                      <small class="text-muted">2 hours ago</small>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-content">
+                      <div class="activity-icon bg-primary">
+                        <i class="bi bi-code-slash"></i>
+                      </div>
+                      <h6>Solved Data Structure Challenge</h6>
+                      <p>Implemented efficient solution for binary tree traversal</p>
+                      <small class="text-muted">Yesterday</small>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-content">
+                      <div class="activity-icon bg-info">
+                        <i class="bi bi-book"></i>
+                      </div>
+                      <h6>Completed Advanced JavaScript Module</h6>
+                      <p>Mastered concepts of closures and promises</p>
+                      <small class="text-muted">2 days ago</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title">Personalized Feedback</h5>
+                <div class="feedback-list">
+                  <div class="feedback-item">
+                    <h6>Mock Interview Performance</h6>
+                    <p>Great problem-solving approach. Focus on optimizing time complexity in your solutions.</p>
+                  </div>
+                  <div class="feedback-item">
+                    <h6>Code Quality</h6>
+                    <p>Excellent code organization. Consider adding more comments for better documentation.</p>
+                  </div>
+                  <div class="feedback-item">
+                    <h6>Learning Pace</h6>
+                    <p>You're progressing faster than average. Keep up the good work!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Dashboard Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container copyright">
+      <p>&copy; <span>Copyright</span> <strong class="px-1">Append</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Dashboard Charts -->
+  <script>
+    // Performance Chart
+    const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(performanceCtx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+        datasets: [{
+          label: 'Performance Score',
+          data: [65, 70, 68, 75, 82, 85],
+          borderColor: '#e84545',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+
+    // Skill Distribution Chart
+    const skillCtx = document.getElementById('skillChart').getContext('2d');
+    new Chart(skillCtx, {
+      type: 'radar',
+      data: {
+        labels: [
+          'Problem Solving',
+          'System Design',
+          'Data Structures',
+          'Algorithms',
+          'Communication',
+          'Technical Knowledge'
+        ],
+        datasets: [{
+          label: 'Current Skills',
+          data: [85, 75, 82, 79, 88, 80],
+          backgroundColor: 'rgba(232, 69, 69, 0.2)',
+          borderColor: '#e84545',
+          pointBackgroundColor: '#e84545'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            beginAtZero: true,
+            max: 100
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

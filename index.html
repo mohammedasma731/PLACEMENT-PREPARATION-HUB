@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Desire - Your Path to Dream Placement</title>
+  <meta name="description" content="Comprehensive placement preparation platform with AI-powered tools, mock interviews, and company resources">
+  <meta name="keywords" content="placement preparation, mock interviews, resume builder, coding practice, interview preparation">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/auth.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Append
+  * Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Desire</h1><span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="clientsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Clients</a>
+            <ul class="dropdown-menu" aria-labelledby="clientsDropdown">
+              <li><a class="dropdown-item" href="placement.html">Placement Resources</a></li>
+              <li><a class="dropdown-item" href="interview-questions.html">Interview Questions</a></li>
+              <li><a class="dropdown-item" href="domain-related.html">Domain Related Links</a></li>
+              <li><a class="dropdown-item" href="testimonials.html">Client Testimonials</a></li>
+              <li><a class="dropdown-item" href="case-studies.html">Case Studies</a></li>
+              <li><a class="dropdown-item" href="success-stories.html">Client Success Stories</a></li>
+              <li><a class="dropdown-item" href="onboarding-resources.html">Client Onboarding Resources</a></li>
+            </ul>
+          </li>
+          <li><a href="dashboard.html">Progress Dashboard</a></li>
+        </ul>
+       <!-- <a href="get-started.html" class="btn-get-started">Get Started</a-->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="auth-buttons">
+        <a class="btn-signin me-2" href="signin.html">Sign In</a>
+        <a class="btn-signup" href="signup.html">Sign Up</a>
+      </div>
+
+      <a class="btn-getstarted" href="get-started.html">Get Started</a>
+
+      <div class="profile-section ms-3">
+        <div class="dropdown">
+          <a href="#" class="profile-link dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="profile-circle" id="profileLogo">
+              <span>?</span>
+            </div>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" href="edit-profile.html">Edit Profile</a></li>
+            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" onclick="handleLogout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <style>
+    .profile-section {
+      display: flex;
+      align-items: center;
+    }
+    .profile-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .profile-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #00bfff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .profile-circle span {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: var(--heading-font);
+    }
+    .profile-link:hover .profile-circle {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    }
+    .dropdown-menu {
+      min-width: 150px;
+    }
+    .dropdown-item {
+      color: #000;
+      padding: 10px 15px;
+      transition: background 0.3s;
+    }
+    .dropdown-item:hover {
+      background: rgba(0, 191, 255, 0.1);
+    }
+    .dropdown-menu {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+    }
+    .dropdown-item {
+      color: #343a40;
+      padding: 10px 15px;
+      transition: background 0.3s;
+    }
+    .dropdown-item:hover {
+      background: rgba(0, 191, 255, 0.2);
+      color: #007bff;
+    }
+  </style>
+
+  <script>
+    // Check for user's initial on page load
+    window.addEventListener('load', function() {
+      const currentUser = localStorage.getItem('currentUser');
+      if (currentUser) {
+        const userData = JSON.parse(currentUser);
+        if (userData.initial) {
+          document.querySelector('#profileLogo span').textContent = userData.initial;
+        }
+      }
+    });
+  </script>
+
+  <script>
+    // Update profile logo on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const userData = localStorage.getItem('userData');
+      if (userData) {
+        const user = JSON.parse(userData);
+        if (user && user.name) {
+          const profileLogo = document.querySelector('#profileLogo span');
+          if (profileLogo) {
+            profileLogo.textContent = user.name.charAt(0).toUpperCase();
+          }
+        }
+      }
+    });
+
+    // Handle logout
+    function handleLogout() {
+      localStorage.removeItem('userData');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h2 data-aos="fade-up" data-aos-delay="100">Placement Preparation Hub</h2>
+            <p class="hero-text mb-4" data-aos="fade-up" data-aos-delay="200">
+              Take control of your placement preparation with our AI-powered platform. Build ATS-friendly resumes, practice with smart interviews, and track your progress - all in one place.
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+              
+              <a href="quiz.html" class="btn-primary">Start Practice</a>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="400">
+            <div class="quick-stats">
+              <div class="stat-card">
+                <h4>500+</h4>
+                <p>Mock Interviews</p>
+              </div>
+              <div class="stat-card">
+                <h4>50+</h4>
+                <p>Company Resources</p>
+              </div>
+              <div class="stat-card">
+                <h4>24/7</h4>
+                <p>AI Support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <a href="https://techdevguide.withgoogle.com/resources/?no-filter=true#!" class="company-link">
+              <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+            </a>
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/the-definitive-guide-to-the-coding-interview/379025" class="company-link">
+              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            </a>
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <a href="https://prepinsta.com/wipro/" class="company-link">
+              <img src="assets/img/clients/client-3.png" class="img-fluid" alt="Wipro" style="max-width: 120px;">
+          </a>
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <a href="https://www.geeksforgeeks.org/amazon-interview-preparation/" class="company-link">
+              <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            </a>
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <a href="https://www.naukri.com/code360/library/flipkart-preparation-guide" class="company-link">
+              <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            </a>
+          </div><!-- End Client Item -->
+
+        
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>Quiz</h3>
+            <h2>Your Complete Placement Preparation Partner</h2>
+            <p>Our platform provides targeted preparation with comprehensive aptitude, communication, and coding tests. These assessments are designed to sharpen your problem-solving skills, enhance your communication abilities, and improve your coding proficiency, ensuring you're fully prepared for every aspect of the placement process.</p>
+            <a href="quiz-test.html" class="read-more"><span>Start Quiz</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-person-workspace"></i>
+                  <h3>Aptitude Tests</h3>
+                  <p>Boost your problem-solving skills with tests on logical reasoning, quantitative aptitude, and data interpretation, preparing you for placement exams.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-file-earmark-text"></i>
+                  <h3>Verbal Tests</h3>
+                  <p>Improve your verbal and non-verbal communication with assessments focused on grammar, vocabulary, and clarity in expressing ideas.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-code-square"></i>
+                  <h3>Coding Tests</h3>
+                  <p>Enhance your coding abilities with tests covering various languages and problem-solving scenarios, helping you excel in technical interviews.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <!--<div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <h3>Progress Tracking</h3>
+                  <p>Monitor your preparation progress with detailed analytics and improvement suggestions</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <h3>Learning Resources</h3>
+                  <p>Our platform offers resources categorized by difficulty: Low for foundational guides, Medium for practice quizzes and tutorials, and High for advanced challenges</p>
+                  <a href="resources.html" class="btn btn-primary">Resources</a> <!-- Resources Button -->
+                </div>
+              </div> <!-- End Icon Box -->
+              
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section dark-background">
+
+      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Active Users</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Success Stories</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Practice Questions</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Partner Companies</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Our platform offers personalized learning paths, comprehensive quizzes, and tailored recommendations to help students excel in placement preparation. With expert guidance, progress tracking, and soft skills development, we ensure a well-rounded and effective learning experience.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+              <div>
+                <h4 class="title"><a href="services-details.html" class="stretched-link">Resume Builder</a></h4>
+                <p class="description">Craft professional, standout resumes effortlessly with our intuitive resume builder. Tailored templates and expert tips ensure your resume highlights your skills and achievements, giving you an edge in job applications.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+              <div>
+                <h4 class="title"><a href="services-details.html" class="stretched-link">Customized Learning Paths</a></h4>
+                <p class="description">Our intelligent system assesses your strengths and weaknesses through detailed quizzes and evaluations. Based on the results, we craft a personalized learning path to help you focus on areas that need improvement.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+              <div>
+                <h4 class="title"><a href="services-details.html" class="stretched-link">Comprehensive Quizzes</a></h4>
+                <p class="description">Enhance your knowledge with our diverse set of quizzes in technical subjects, soft skills, and coding. Each quiz is designed to test and expand your understanding, preparing you for real-world challenges.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+              <div>
+                <h4 class="title"><a href="services-details.html" class="stretched-link">Progress Tracking</a></h4>
+                <p class="description">Monitor your progress with our intuitive dashboard. Track your performance in quizzes, understand your learning curve, and see your improvements over time.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+              <div>
+                <h4 class="title"><a href="services-details.html" class="stretched-link">Coding Practice and Challenges</a></h4>
+                <p class="description">Sharpen your coding skills with hands-on practice and coding challenges. Our platform provides a range of problems to solve, helping you build confidence and expertise in coding.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex">
+              <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+              <div>
+                <h4 class="title"><a href="services-details.html" class="stretched-link">24/7 Support</a></h4>
+                <p class="description">Our support team is always available to assist you with any questions or technical issues. We’re here to ensure your learning experience is seamless and effective.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+      <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+        <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+          <img src="assets/img/features-light-3.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+          <h3>Mock Interviews</h3>
+          <p>Prepare for real-world interviews with our mock interview sessions. Gain valuable experience, receive constructive feedback from industry experts, and build confidence to excel in your placement interviews.</p>
+          <ul>
+            <li><i class="bi bi-check"></i> <span><h6>Realistic Interview Experience: </h6>Simulate real interview scenarios to practice and build confidence.</span></li>
+            <li><i class="bi bi-check"></i><span><h6> Expert Feedback: </h6>Receive constructive feedback from industry professionals to improve your performance.</span></li>
+            <li><i class="bi bi-check"></i> <span><h6>Skill Enhancement: </h6>Identify strengths and areas for improvement, enhancing your communication and problem-solving skills.</span>.</li>
+          </ul>
+          <a href="https://remasto.com/?gad_source=1&gclid=Cj0KCQiAvvO7BhC-ARIsAGFyToVHwkAoJBRs6nwuAaPyx7qPgpeD46KEDUXycrwtC48uzS15FUTk_7waAtZPEALw_wcBhttps://remasto.com/?gad_source=1&gclid=Cj0KCQiAvvO7BhC-ARIsAGFyToVHwkAoJBRs6nwuAaPyx7qPgpeD46KEDUXycrwtC48uzS15FUTk_7waAtZPEALw_wcB" class="btn btn-get-started align-self-start">Get Started</a>
+        </div>
+      </div><!-- Features Item -->
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <!--<h2>Resume</h2>
+        <p>"Your resume is your first impression—make it count."</p>
+      </div> End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h3 style="margin-top: 0;">Resume Builder</h3>
+            <p>
+              Create a professional resume effortlessly with our easy-to-use Resume Builder. Choose from customizable templates, input your details, and get expert tips to make your resume stand out. Download in multiple formats and start applying with confidence!
+            </p>
+            <a href="https://www.kickresume.com/en/" class="btn btn-get-started">Build Resume</a>
+            <a href="https://www.jobscan.co/" class="btn btn-get-started">Job Specific</a>
+            <a href="https://resumeworded.com/score" class="btn btn-get-started">Check ATS</a>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="image-stack">
+              <img src="assets/img/features-light-1.webp" alt="" class="stack-front">
+              <img src="assets/img/features-light-2.png" alt="" class="stack-back">
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Quiz Grade Resources and Learning Roadmaps</h2>
+        <p><div class="container">
+        
+        
+          <div class="grade-input">
+            <label for="gradeSelect">Select Resources:</label>
+            <select id="gradeSelect" onchange="redirectToResource(this.value)">
+                <option value="">Choose Resources</option>
+                <option value="quiz-beginner.html">Beginner Resources</option>
+                <option value="quiz-intermediate.html">Intermediate Resources</option>
+                <option value="quiz-advanced.html">Advanced Resources</option>
+            </select>
+        </div>
+        
+          
+          <div class="resources-container">
+              <ul id="resourceList" class="resource-list"></ul>
+          </div>
+  
+          <div id="resourceLinks" class="resource-links">
+              <!-- Original resources will be dynamically added here -->
+          </div>
+  </p>
+      </div><!-- End Section Title -->
+
+
+
+
+      
+
+
+
+
+
+      <div class="container" data-aos="zoom-in" data-aos-delay="100">
+
+        <div class="row g-4">
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Beginner Roadmap</h3>
+              <p>Essential learning path for students starting their journey.</p>
+              
+             
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Learn programming fundamentals</span></li>
+                <li><i class="bi bi-check"></i> <span>Understand basic algorithms</span></li>
+                <li><i class="bi bi-check"></i> <span>Practice coding exercises</span></li>
+                <li><i class="bi bi-check"></i> <span>Build simple applications</span></li>
+                <li><i class="bi bi-check"></i> <span>Understand basic algorithms</span></li>
+                <li><i class="bi bi-check"></i> <span>Practice coding exercises</span></li>
+                
+              <div class="text-center"><a href="images/beginner_roadmap.png" class="buy-btn">View Complete Roadmap</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4">
+            <div class="pricing-item featured">
+              <h3>Intermediate Roadmap</h3>
+              <p>Advanced learning path for students with foundational knowledge.</p>
+              
+
+              
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Explore advanced programming techniques</span></li>
+                <li><i class="bi bi-check"></i> <span>Learn design patterns and best practices</span></li>
+                <li><i class="bi bi-check"></i> <span>Implement object-oriented programming</span></li>
+                <li><i class="bi bi-check"></i> <span>Create multi-module projects</span></li>
+                <li><i class="bi bi-check"></i> <span>Understand software architecture</span></li>
+                <li><i class="bi bi-check"></i> <span>Develop complex application structures</span></li>
+              </ul>
+              <div class="text-center"><a href="images/intermediate_roadmap.png" class="buy-btn">View Complete Roadmap</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Advanced Roadmap </h3>
+              <p>Specialized track for students looking to master their field.</p>
+              
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Master advanced system design</span></li>
+                <li><i class="bi bi-check"></i> <span>Develop scalable applications</span></li>
+                <li><i class="bi bi-check"></i> <span>Implement complex algorithms</span></li>
+                <li><i class="bi bi-check"></i> <span>Contribute to open-source projects</span></li>
+                <li><i class="bi bi-check"></i> <span>Build enterprise-level solutions</span></li>
+              </ul>
+              <div class="text-center"><a href="images/Advanced_roadmap.png" class="buy-btn">View Complete Roadmap</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    {{ ... }}
+     <!-- Learn Through Games Section -->
+    <section id="learn-games" class="learn-games section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Learn Coding Through Games</h2>
+        <p>Make coding fun and interactive with these engaging platforms!</p>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-3 mb-4">
+            <a href="https://www.codewars.com/" target="_blank" class="btn btn-primary w-100 p-3">
+              <i class="bi bi-joystick"></i> Codewars
+            </a>
+          </div>
+          <div class="col-md-3 mb-4">
+            <a href="https://www.codingame.com/start/" target="_blank" class="btn btn-success w-100 p-3">
+              <i class="bi bi-puzzle"></i> Screeps
+            </a>
+          </div>
+          <div class="col-md-3 mb-4">
+            <a href="https://mystery.knightlab.com//" target="_blank" class="btn btn-warning w-100 p-3">
+              <i class="bi bi-code-slash"></i> SQL mystery
+            </a>
+          </div>
+          <div class="col-md-3 mb-4">
+            <a href="https://www.codingame.com/start/" target="_blank" class="btn btn-danger w-100 p-3">
+              <i class="bi bi-lightning"></i> Code Game
+            </a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Learn Through Games Section -->
+{{ ... }}
+<!-- Resources Section -->
+<section id="resources" class="resources section light-background">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Essential Resources</h2>
+    <p>Prepare for your tech career with these valuable resources</p>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4">
+        <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://github.com/hxu296/leetcode-company-wise-problems-2022" class="btn btn-primary w-100 p-4 h-100 d-flex flex-column align-items-center">
+            <i class="bi bi-journal-text fs-1 mb-3"></i>
+            <h3 class="mb-2">Previous Interview Questions</h3>
+            <p class="text-center mb-0">Access real interview questions from top tech companies</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://visualgo.net/en" class="btn btn-success w-100 p-4 h-100 d-flex flex-column align-items-center">
+            <i class="bi bi-diagram-3 fs-1 mb-3"></i>
+            <h3 class="mb-2">DSA Patterns</h3>
+            <p class="text-center mb-0">Master common Data Structures and Algorithms patterns</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="resource-card" data-aos="fade-up" data-aos-delay="300">
+          <a href="https://docs.google.com/document/d/1-Ac7_m_Rhj_AxwhnWFr2bQlH7uZKim_l8qD88KBy4Z4/mobilebasic?fbclid=PAY2xjawHqULZleHRuA2FlbQIxMAABph7CCihyQ7YWq-PYrOrqWdmtL0zBIPDuH2hZWdX5Nd3NHVHHSGBiz0TyDQ_aem_4842DcBtJDFy8SEXWLGVHg" class="btn btn-warning w-100 p-4 h-100 d-flex flex-column align-items-center">
+            <i class="bi bi-calendar-event fs-1 mb-3"></i>
+            <h3 class="mb-2">Internship Calendar 2025</h3>
+            <p class="text-center mb-0">Stay updated with internship application deadlines</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .resource-card .btn {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+    }
+    .resource-card .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .resource-card h3 {
+      font-size: 1.5rem;
+      color: white;
+    }
+    .resource-card p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      color: white;
+    }
+    .resource-card i {
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .resource-card h3 {
+        font-size: 1.2rem;
+      }
+      .resource-card p {
+        font-size: 0.8rem;
+      }
+      .resource-card .btn {
+        padding: 1.5rem !important;
+      }
+    }
+  </style>
+</section><!-- End Resources Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <img src="assets/img/cta-bg.jpg" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Start Your Learning Journey Today</h3>
+              <p>Ready to take your career to the next level? Join our community of learners and access high-quality educational resources, practice materials, and expert guidance. Whether you're preparing for interviews or expanding your skills, we're here to help you succeed.</p>
+              <a class="cta-btn" href="get-started.html">Get Started Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section light-background">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+        <h3>Testimonials</h3>
+        <p>
+          Hear from our satisfied users about their experiences with our platform. Real feedback, real results.
+        </p>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="testimonial-img flex-shrink-0">
+                  <div>
+                    <h3>Saul Goodman</h3>
+                    <h4>Ceo &amp; Founder</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>This platform has revolutionized our approach to learning. The personalized recommendations are spot on.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="assets/img/testimonials/testimonials-2.jpg" alt="" class="testimonial-img flex-shrink-0">
+                  <div>
+                    <h3>Sara Wilsson</h3>
+                    <h4>Designer</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The adaptive learning system helped me improve my weak areas quickly and effectively.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="assets/img/testimonials/testimonials-3.jpg" alt="" class="testimonial-img flex-shrink-0">
+                  <div>
+                    <h3>Jena Karlis</h3>
+                    <h4>Store Owner</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The quizzes and resources are top-notch, making preparation both comprehensive and enjoyable.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="assets/img/testimonials/testimonials-4.jpg" alt="" class="testimonial-img flex-shrink-0">
+                  <div>
+                    <h3>Matt Brandon</h3>
+                    <h4>Freelancer</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The detailed analytics and progress tracking have been invaluable in my preparation journey.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="assets/img/testimonials/testimonials-5.jpg" alt="" class="testimonial-img flex-shrink-0">
+                  <div>
+                    <h3>John Larson</h3>
+                    <h4>Entrepreneur</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The expert guidance and 24/7 support make this platform stand out. Highly recommended!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><!-- /Testimonials Section -->
+
+                
+
+    <!-- Recent Posts Section -->
+    <section id="recent-posts" class="recent-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Posts</h2>
+        <p>keeps you updated with the latest insights, tips, and news related to placement preparation. Stay informed and enhance your learning with our regularly updated content.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article>
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Coding Tips</p>
+
+<h2 class="title">
+  <a href="blog-details.html">10 Essential Coding Practices for Beginners</a>
+</h2>
+
+<div class="d-flex align-items-center">
+  <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+  <div class="post-meta">
+    <p class="post-author">Maria Doe</p>
+    <p class="post-date">
+      <time datetime="2022-01-01">Jan 9, 2025</time>
+    </p>
+  </div>
+</div>
+
+</article>
+</div><!-- End post list item -->
+
+<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+<article>
+
+<div class="post-img">
+  <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+</div>
+
+<p class="post-category">Web Development</p>
+
+<h2 class="title">
+  <a href="blog-details.html">Mastering Responsive Design: Best Practices</a>
+</h2>
+
+<div class="d-flex align-items-center">
+  <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+  <div class="post-meta">
+    <p class="post-author">Allisa Mayer</p>
+    <p class="post-date">
+      <time datetime="2022-01-01">Jan 9, 2025</time>
+    </p>
+  </div>
+</div>
+
+</article>
+</div><!-- End post list item -->
+
+<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+<article>
+
+<div class="post-img">
+  <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+</div>
+
+<p class="post-category">Software Development</p>
+
+<h2 class="title">
+  <a href="blog-details.html">Debugging Techniques Every Developer Should Know</a>
+</h2>
+
+<div class="d-flex align-items-center">
+  <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+  <div class="post-meta">
+    <p class="post-author">Mark Dower</p>
+    <p class="post-date">
+      <time datetime="2022-01-01">Jan 9, 2025</time>
+    </p>
+  </div>
+</div>
+
+</article>
+</div><!-- End post list item -->
+
+</div><!-- End recent posts list -->
+
+</div>
+
+    </section><!-- /Recent Posts Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Our contact section makes it easy to get in touch. Whether you have questions, need support, or want to provide feedback, we're here to help you every step of the way.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>A108 Adam Street</p>
+                  <p>New York, NY 535022</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+91 9398340943 </p>
+                  <p>+91 9553249123</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>lavanyageddada2@gmail.com</p>
+                  <p>lavanyageddada5@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="500">
+                  <i class="bi bi-clock"></i>
+                  <h3>Open Hours</h3>
+                  <p>Monday - Friday</p>
+                  <p>9:00AM - 05:00PM</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Desire</span>
+          </a>
+          <p>Desire tailors educational content to each student's unique needs, strengths, and learning pace. By analyzing performance data, the system provides personalized recommendations, ensuring an efficient and effective learning experience.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Resume Builders</a></li>
+            <li><a href="#">Quizes</a></li>
+            <li><a href="#">Progress Tracking</a></li>
+            <li><a href="#">Coding Practice</a></li>
+            <li><a href="#">Customized Learning Paths</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91-9553249123</span></p>
+          <p><strong>Email:</strong> <span>lavanyageddada2@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p> <span>Copyright</span> <strong class="sitename">Desire</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">Desire</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function redirectToResource(url) {
+      if (url) {
+        window.location.href = url;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

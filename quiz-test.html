@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Placement Preparation Quiz</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f7ff 0%, #e0e6ff 100%);
+    }
+    .quiz-section {
+      display: none;
+    }
+    .quiz-section.active {
+      display: block !important;
+    }
+    .quiz-page {
+      background: linear-gradient(45deg, rgba(65, 84, 241, 0.05) 0%, rgba(89, 105, 243, 0.05) 100%);
+      min-height: 100vh;
+      padding: 40px 0;
+      position: relative;
+    }
+    .quiz-page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%234154f1" fill-opacity="0.05" d="M 0 0 L 200 0 L 200 200 L 0 200 Z"/></svg>') repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(65, 84, 241, 0.1);
+    }
+    .section-header h2 {
+      font-size: 32px;
+      background: linear-gradient(45deg, #4154f1, #5969f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+    .section-header p {
+      color: #666;
+      font-size: 18px;
+    }
+    .nav-pills {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+    }
+    .nav-pills .nav-link {
+      border-radius: 50px;
+      padding: 12px 25px;
+      font-weight: 500;
+      color: #4154f1;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+    .nav-pills .nav-link:hover {
+      background: linear-gradient(45deg, rgba(65, 84, 241, 0.1), rgba(89, 105, 243, 0.1));
+    }
+    .nav-pills .nav-link.active {
+      background: linear-gradient(45deg, #4154f1, #5969f3);
+      color: white;
+      box-shadow: 0 3px 10px rgba(65, 84, 241, 0.3);
+    }
+    .question-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .question-card:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+    }
+    .option-btn {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      margin: 12px 0;
+      text-align: left;
+      border: 2px solid rgba(65, 84, 241, 0.1);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 15px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+    }
+    .option-btn:hover {
+      border-color: #4154f1;
+      background: linear-gradient(45deg, rgba(65, 84, 241, 0.1), rgba(89, 105, 243, 0.1));
+      transform: translateX(5px);
+    }
+    .option-btn.correct {
+      background: linear-gradient(45deg, #28a745, #34ce57) !important;
+      color: white !important;
+      border-color: #28a745 !important;
+      box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3) !important;
+    }
+    .option-btn.wrong {
+      background: linear-gradient(45deg, #dc3545, #e4606d) !important;
+      color: white !important;
+      border-color: #dc3545 !important;
+      box-shadow: 0 3px 10px rgba(220, 53, 69, 0.3) !important;
+    }
+    .progress {
+      height: 12px;
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+      backdrop-filter: blur(5px);
+    }
+    .progress-bar {
+      background: linear-gradient(45deg, #4154f1, #5969f3);
+      transition: width 0.5s ease;
+      box-shadow: 0 2px 5px rgba(65, 84, 241, 0.3);
+    }
+    .result-section {
+      text-align: center;
+      padding: 40px;
+      display: none;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(65, 84, 241, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .result-section h3 {
+      background: linear-gradient(45deg, #4154f1, #5969f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .result-section h4 {
+      font-size: 24px;
+      background: linear-gradient(45deg, #28a745, #34ce57);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+    .result-section .btn {
+      background: linear-gradient(45deg, #4154f1, #5969f3);
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    .result-section .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(65, 84, 241, 0.3);
+      background: linear-gradient(45deg, #5969f3, #4154f1);
+    }
+    /* Add animated background elements */
+    .quiz-page::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(65, 84, 241, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(89, 105, 243, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(65, 84, 241, 0.05) 0%, transparent 30%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .nav-pills .nav-link {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+      .question-card {
+        padding: 20px;
+      }
+      .option-btn {
+        padding: 12px 15px;
+        font-size: 14px;
+      }
+      .section-header h2 {
+        font-size: 28px;
+      }
+      .section-header p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-index">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1>Append</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#quiz" class="active">Quiz</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="previous.html">Previous</a></li>
+          <li><a href="dashboard.html">Progress Dashboard</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- Quiz Section -->
+    <section class="quiz-page section" style="margin-top: 80px;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Placement Preparation Quiz</h2>
+          <p>Test your knowledge in coding, language, and aptitude</p>
+        </div>
+
+        <!-- Quiz Navigation -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="quizTabs">
+          <li class="nav-item">
+            <button class="nav-link active" data-section="technical">Technical Quiz</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-section="communication">Communication Quiz</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-section="aptitude">Aptitude Quiz</button>
+          </li>
+        </ul>
+
+        <!-- Progress Bar -->
+        <div class="progress mb-4">
+          <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%"></div>
+        </div>
+        <p class="text-center mb-4" id="progressText">Question 1 of 25</p>
+
+        <!-- Quiz Sections -->
+        <div id="quizSection">
+          <div class="question-card">
+            <h4 id="questionNumber" class="mb-3">Question 1</h4>
+            <h4 id="questionText"></h4>
+            <div id="options" class="mt-4"></div>
+          </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultSection" class="result-section">
+          <h3>Quiz Results</h3>
+          <div id="technicalResult" class="mb-3">
+            <h4>Technical Section</h4>
+            <p id="technicalScore"></p>
+          </div>
+          <div id="communicationResult" class="mb-3">
+            <h4>Communication Section</h4>
+            <p id="communicationScore"></p>
+          </div>
+          <div id="aptitudeResult" class="mb-3">
+            <h4>Aptitude Section</h4>
+            <p id="aptitudeScore"></p>
+          </div>
+          <div id="totalResult" class="mt-4">
+            <h4>Total Score</h4>
+            <p id="totalScore"></p>
+          </div>
+          <button class="btn btn-primary mt-3" onclick="resetQuiz()">Retake All Tests</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Quiz JavaScript -->
+  <script>
+    // Quiz Questions
+    const quizData = {
+      technical: [
+        {
+          question: "What is the output of 'print(2**3**2)' in Python?",
+          options: ["64", "512", "36", "None of the above"],
+          correct: 1,
+          explanation: "The exponentiation operator ** is right-associative, so 3**2 is evaluated first (9), then 2**9 = 512"
+        },
+        {
+          question: "Which of the following is not a valid variable name in Python?",
+          options: ["my_var", "_var", "2var", "var2"],
+          correct: 2,
+          explanation: "Variable names cannot start with a number in Python"
+        },
+        {
+          question: "What is the time complexity of Quick Sort in worst case?",
+          options: ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+          correct: 1,
+          explanation: "Quick Sort has O(n²) worst case complexity when array is already sorted"
+        },
+        {
+          question: "What is a pure virtual function in C++?",
+          options: ["Function that returns void", "Function with no parameters", "Function declared in base class with no definition", "Static function"],
+          correct: 2,
+          explanation: "A pure virtual function is declared in base class with no definition and must be implemented by derived classes"
+        },
+        {
+          question: "What is the size of int data type in Java?",
+          options: ["16 bits", "32 bits", "64 bits", "Depends on platform"],
+          correct: 1,
+          explanation: "In Java, int is always 32 bits regardless of platform"
+        },
+        {
+          question: "What is the difference between ArrayList and LinkedList in Java?",
+          options: ["ArrayList is faster for random access", "LinkedList is better for insertions", "Both A and B", "No difference"],
+          correct: 2,
+          explanation: "ArrayList offers better random access while LinkedList is better for insertions/deletions"
+        },
+        {
+          question: "What is a B-Tree in Data Structures?",
+          options: ["Binary Tree", "Self-balancing tree", "Multi-level tree", "All of the above"],
+          correct: 1,
+          explanation: "B-Tree is a self-balancing tree data structure that maintains sorted data"
+        },
+        {
+          question: "What is the difference between Stack and Queue?",
+          options: ["No difference", "Stack is LIFO, Queue is FIFO", "Stack is slower", "Queue is LIFO"],
+          correct: 1,
+          explanation: "Stack follows Last-In-First-Out, Queue follows First-In-First-Out"
+        },
+        {
+          question: "What is the purpose of virtual memory?",
+          options: ["Increase RAM", "Use disk as RAM", "Speed up CPU", "Store temporary files"],
+          correct: 1,
+          explanation: "Virtual memory uses disk space as extended RAM when physical RAM is full"
+        },
+        {
+          question: "What is the difference between process and thread?",
+          options: ["No difference", "Process is lighter", "Thread shares resources", "Threads are independent"],
+          correct: 2,
+          explanation: "Threads share resources within same process while processes are independent"
+        },
+        {
+          question: "What is a constructor in OOP?",
+          options: ["Normal method", "Special method to initialize objects", "Destructor", "Static method"],
+          correct: 1,
+          explanation: "Constructor is a special method called when creating an object"
+        },
+        {
+          question: "What is the purpose of 'this' keyword?",
+          options: ["Reference current object", "Create new object", "Delete object", "Call method"],
+          correct: 0,
+          explanation: "'this' refers to the current instance of the class"
+        },
+        {
+          question: "What is SQL injection?",
+          options: ["Database backup", "Security vulnerability", "SQL query", "Database design"],
+          correct: 1,
+          explanation: "SQL injection is a security vulnerability where malicious SQL code is inserted into queries"
+        },
+        {
+          question: "What is the purpose of CSS Box Model?",
+          options: ["Animation", "Layout calculation", "Color management", "Font styling"],
+          correct: 1,
+          explanation: "Box Model defines how elements' dimensions are calculated including padding, border, and margin"
+        },
+        {
+          question: "What is REST API?",
+          options: ["Database", "Web service architecture", "Programming language", "Framework"],
+          correct: 1,
+          explanation: "REST is an architectural style for designing networked applications"
+        },
+        {
+          question: "What is the difference between GET and POST?",
+          options: ["No difference", "GET is secure", "GET in URL, POST in body", "POST is faster"],
+          correct: 2,
+          explanation: "GET sends data in URL parameters, POST sends in request body"
+        },
+        {
+          question: "What is JWT used for?",
+          options: ["Database", "Authentication", "Styling", "Routing"],
+          correct: 1,
+          explanation: "JWT (JSON Web Tokens) is used for authentication and information exchange"
+        },
+        {
+          question: "What is the purpose of index in database?",
+          options: ["Save space", "Faster search", "Data backup", "Data integrity"],
+          correct: 1,
+          explanation: "Indexes improve search performance in databases"
+        },
+        {
+          question: "What is dependency injection?",
+          options: ["Design pattern", "Programming language", "Database concept", "Network protocol"],
+          correct: 0,
+          explanation: "Dependency injection is a design pattern that implements inversion of control"
+        },
+        {
+          question: "What is the purpose of Docker?",
+          options: ["Text editor", "Container platform", "Database", "Programming language"],
+          correct: 1,
+          explanation: "Docker is a platform for developing, shipping, and running applications in containers"
+        },
+        {
+          question: "What is a closure in JavaScript?",
+          options: ["Loop", "Function with access to outer scope", "Array method", "Object"],
+          correct: 1,
+          explanation: "Closure is a function that has access to variables in its outer scope"
+        },
+        {
+          question: "What is the purpose of normalization in databases?",
+          options: ["Reduce redundancy", "Increase speed", "Add more tables", "Decrease storage"],
+          correct: 0,
+          explanation: "Normalization helps reduce data redundancy and maintain data integrity"
+        },
+        {
+          question: "What is the difference between HTTP and HTTPS?",
+          options: ["No difference", "HTTPS is encrypted", "HTTP is newer", "HTTPS is faster"],
+          correct: 1,
+          explanation: "HTTPS adds SSL/TLS encryption to HTTP"
+        },
+        {
+          question: "What is the purpose of Git?",
+          options: ["Text editor", "Version control", "Web server", "Database"],
+          correct: 1,
+          explanation: "Git is a distributed version control system for tracking changes in source code"
+        },
+        {
+          question: "What is a deadlock?",
+          options: ["Program crash", "Infinite loop", "Resource conflict", "Memory leak"],
+          correct: 2,
+          explanation: "Deadlock occurs when processes are waiting for each other's resources"
+        }
+      ],
+      communication: [
+        {
+          question: "Choose the correct form: 'Neither of the students ___ present.'",
+          options: ["are", "were", "is", "have"],
+          correct: 2,
+          explanation: "'Neither' takes singular verb"
+        },
+        {
+          question: "Identify the sentence with correct subject-verb agreement:",
+          options: ["The team are playing", "The team is playing", "The team were playing", "The team have playing"],
+          correct: 1,
+          explanation: "Collective nouns take singular verbs"
+        },
+        {
+          question: "Which word is spelled correctly?",
+          options: ["Accomodation", "Accommodation", "Acommodation", "Acomodation"],
+          correct: 1,
+          explanation: "'Accommodation' has two 'c's and two 'm's"
+        },
+        {
+          question: "Choose the correct sentence:",
+          options: ["I will go their", "I will go there", "I will go they're", "I will go they are"],
+          correct: 1,
+          explanation: "'There' is used for location"
+        },
+        {
+          question: "What is the plural of 'analysis'?",
+          options: ["Analysises", "Analysis", "Analyses", "Analysi"],
+          correct: 2,
+          explanation: "The plural of 'analysis' is 'analyses'"
+        },
+        {
+          question: "Which sentence uses the correct form of the verb?",
+          options: ["If I was rich", "If I were rich", "If I am rich", "If I be rich"],
+          correct: 1,
+          explanation: "'Were' is used in subjunctive mood"
+        },
+        {
+          question: "Choose the correct word order:",
+          options: ["Red big car", "Big red car", "Car red big", "Car big red"],
+          correct: 1,
+          explanation: "Adjective order: opinion, size, age, shape, color, origin, material, purpose"
+        },
+        {
+          question: "Which is the correct comparative form?",
+          options: ["More easier", "More easy", "Easier", "Easyer"],
+          correct: 2,
+          explanation: "For short adjectives, add '-er' for comparative"
+        },
+        {
+          question: "Select the correct sentence:",
+          options: ["Between you and I", "Between you and me", "Between I and you", "Between me and you"],
+          correct: 1,
+          explanation: "Prepositions like 'between' are followed by objective pronouns"
+        },
+        {
+          question: "Choose the correct form:",
+          options: ["Whom did you meet?", "Who did you meet?", "Whom you did meet?", "Who you did meet?"],
+          correct: 0,
+          explanation: "'Whom' is used as the object of a verb or preposition"
+        },
+        {
+          question: "What is the past participle of 'write'?",
+          options: ["Wrote", "Written", "Writed", "Writing"],
+          correct: 1,
+          explanation: "The past participle of 'write' is 'written'"
+        },
+        {
+          question: "Choose the correct sentence:",
+          options: ["She is more taller than me", "She is taller than me", "She is more taller than I", "She is taller then me"],
+          correct: 1,
+          explanation: "Don't use 'more' with comparative forms ending in '-er'"
+        },
+        {
+          question: "Identify the passive voice:",
+          options: ["The cat chased the mouse", "The mouse was chased by the cat", "The cat is chasing the mouse", "The mouse is being chased"],
+          correct: 1,
+          explanation: "Passive voice puts the object first and uses 'be' + past participle"
+        },
+        {
+          question: "What is the correct possessive form?",
+          options: ["The childrens toys", "The children's toys", "The childrens' toys", "The childrenses toys"],
+          correct: 1,
+          explanation: "Add apostrophe + s to show possession, even for irregular plurals"
+        },
+        {
+          question: "Choose the correct sentence:",
+          options: ["I have less friends than you", "I have fewer friends than you", "I have lesser friends than you", "I have few friends than you"],
+          correct: 1,
+          explanation: "Use 'fewer' for countable nouns, 'less' for uncountable nouns"
+        },
+        {
+          question: "Select the correct form:",
+          options: ["I wish I was there", "I wish I were there", "I wish I am there", "I wish I be there"],
+          correct: 1,
+          explanation: "Use 'were' in wishes and contrary-to-fact situations"
+        },
+        {
+          question: "What is the correct article usage?",
+          options: ["An university", "A university", "The university", "No article needed"],
+          correct: 1,
+          explanation: "Use 'a' before consonant sounds, 'an' before vowel sounds"
+        },
+        {
+          question: "Choose the correct sentence:",
+          options: ["She laid down to rest", "She lay down to rest", "She lied down to rest", "She laying down to rest"],
+          correct: 1,
+          explanation: "'Lay' is the past tense of 'lie' (to recline)"
+        },
+        {
+          question: "Identify the correct sentence:",
+          options: ["Each of the students have completed", "Each of the students has completed", "Each of the students are completed", "Each of the students were completed"],
+          correct: 1,
+          explanation: "'Each' takes a singular verb"
+        },
+        {
+          question: "What is the correct form?",
+          options: ["Could of gone", "Could have gone", "Could had gone", "Could've had gone"],
+          correct: 1,
+          explanation: "The correct form is 'could have' (or could've), not 'could of'"
+        },
+        {
+          question: "Choose the correct word:",
+          options: ["Affect", "Effect", "Affekt", "Efect"],
+          correct: 0,
+          explanation: "'Affect' is usually a verb meaning to influence"
+        },
+        {
+          question: "Select the correct sentence:",
+          options: ["The data is correct", "The data are correct", "The data was correct", "The data has correct"],
+          correct: 1,
+          explanation: "'Data' is technically plural (singular: datum)"
+        },
+        {
+          question: "What is the correct form?",
+          options: ["In regards to", "In regard to", "With regards to", "With regard to"],
+          correct: 3,
+          explanation: "'With regard to' is the correct formal expression"
+        },
+        {
+          question: "Choose the correct sentence:",
+          options: ["He is one of the student who is", "He is one of the students who is", "He is one of the students who are", "He is one of the student who are"],
+          correct: 2,
+          explanation: "'One of the' + plural noun + who/that + plural verb"
+        },
+        {
+          question: "Identify the correct sentence:",
+          options: ["Despite of the rain", "Despite the rain", "In despite of the rain", "Despite of rain"],
+          correct: 1,
+          explanation: "'Despite' is used without 'of'"
+        }
+      ],
+      aptitude: [
+        {
+          question: "If 6 men can do a work in 12 days, how many men will be required to do it in 3 days?",
+          options: ["18 men", "24 men", "12 men", "9 men"],
+          correct: 1,
+          explanation: "Using M1D1 = M2D2: 6×12 = M2×3, so M2 = 24"
+        },
+        {
+          question: "A train 200m long travels at 60 kmph. How long will it take to cross a platform 300m long?",
+          options: ["30 seconds", "45 seconds", "60 seconds", "15 seconds"],
+          correct: 0,
+          explanation: "Total distance = 500m, Speed = 16.67 m/s, Time = 500/16.67 = 30 seconds"
+        },
+        {
+          question: "What is 15% of 200?",
+          options: ["30", "20", "25", "35"],
+          correct: 0,
+          explanation: "15% of 200 = (15/100) × 200 = 30"
+        },
+        {
+          question: "If A:B = 2:3 and B:C = 4:5, then A:C = ?",
+          options: ["8:15", "3:5", "2:5", "4:5"],
+          correct: 0,
+          explanation: "First convert to same ratio: A:B:C = 8:12:15, therefore A:C = 8:15"
+        },
+        {
+          question: "A shopkeeper sells an item at 20% profit. If the cost price is 100, what is the selling price?",
+          options: ["120", "80", "100", "140"],
+          correct: 0,
+          explanation: "SP = CP + 20% of CP = 100 + 20 = 120"
+        },
+        {
+          question: "Find the next number in series: 2, 6, 12, 20, ?",
+          options: ["30", "28", "32", "26"],
+          correct: 0,
+          explanation: "Difference increases by 2: 4, 6, 8, 10, so next is 30"
+        },
+        {
+          question: "If the radius of a circle is doubled, how many times will the area increase?",
+          options: ["2 times", "3 times", "4 times", "8 times"],
+          correct: 2,
+          explanation: "Area ∝ r², so doubling radius increases area by 2² = 4 times"
+        },
+        {
+          question: "What is the probability of getting a sum of 7 when two dice are rolled?",
+          options: ["1/6", "5/36", "6/36", "7/36"],
+          correct: 2,
+          explanation: "Favorable outcomes (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6, Total = 36"
+        },
+        {
+          question: "Two trains of length 100m each are running in opposite directions at 40 kmph and 60 kmph. How long will they take to cross each other?",
+          options: ["3.6 seconds", "7.2 seconds", "5.4 seconds", "9 seconds"],
+          correct: 0,
+          explanation: "Relative speed = 100 kmph = 27.78 m/s, Total length = 200m, Time = 200/27.78 = 3.6s"
+        },
+        {
+          question: "If x% of y is z, then z% of y is?",
+          options: ["x", "y", "Cannot determine", "None of these"],
+          correct: 0,
+          explanation: "If x% of y = z, then z% of y = (z/100)y = (x/100)y = x"
+        },
+        {
+          question: "A car travels 30% faster than a bike. If the bike takes 5 hours to reach a destination, how long will the car take?",
+          options: ["3.85 hours", "4.5 hours", "3 hours", "2.5 hours"],
+          correct: 0,
+          explanation: "Car is 30% faster, so time = 5/(1.3) = 3.85 hours"
+        },
+        {
+          question: "What is the compound interest on Rs. 1000 at 10% per annum for 2 years?",
+          options: ["210", "220", "221", "200"],
+          correct: 2,
+          explanation: "CI = P(1 + r/100)ⁿ - P = 1000(1 + 10/100)² - 1000 = 221"
+        },
+        {
+          question: "If 75% of a number is 150, what is the number?",
+          options: ["200", "175", "225", "250"],
+          correct: 0,
+          explanation: "Let x be the number. 75% of x = 150, so x = (150 × 100)/75 = 200"
+        },
+        {
+          question: "A tap can fill a tank in 6 hours. Another tap can empty it in 12 hours. If both taps are opened, how long will it take to fill the tank?",
+          options: ["12 hours", "8 hours", "6 hours", "4 hours"],
+          correct: 0,
+          explanation: "Net filling rate = 1/6 - 1/12 = 1/12, so time = 12 hours"
+        },
+        {
+          question: "What is the average of first 50 natural numbers?",
+          options: ["25", "25.5", "24.5", "26"],
+          correct: 1,
+          explanation: "Average = (n+1)/2 = (50+1)/2 = 25.5"
+        },
+        {
+          question: "A boat travels 20 km upstream in 2 hours and the same distance downstream in 1 hour. What is the speed of the stream?",
+          options: ["5 km/hr", "10 km/hr", "15 km/hr", "20 km/hr"],
+          correct: 0,
+          explanation: "Let boat speed be x and stream speed be y. x-y=10, x+y=20, solving gives y=5"
+        },
+        {
+          question: "Three numbers are in the ratio 2:3:5 and their sum is 50. Find the largest number.",
+          options: ["25", "20", "15", "10"],
+          correct: 0,
+          explanation: "Let numbers be 2x, 3x, 5x. 10x=50, so x=5. Largest number = 5x = 25"
+        },
+        {
+          question: "What is the value of 5³ ÷ 5²?",
+          options: ["5", "25", "125", "1"],
+          correct: 0,
+          explanation: "5³ ÷ 5² = 5³⁻² = 5¹ = 5"
+        },
+        {
+          question: "If log₁₀2 = 0.301, what is log₁₀8?",
+          options: ["0.903", "2.408", "0.602", "0.804"],
+          correct: 0,
+          explanation: "log₁₀8 = log₁₀(2³) = 3log₁₀2 = 3 × 0.301 = 0.903"
+        },
+        {
+          question: "A square has a perimeter of 20 cm. What is its area?",
+          options: ["25 sq cm", "16 sq cm", "20 sq cm", "100 sq cm"],
+          correct: 1,
+          explanation: "Side = perimeter/4 = 20/4 = 5 cm, Area = 5² = 25 sq cm"
+        },
+        {
+          question: "What is the least number that should be added to 1056 to make it exactly divisible by 23?",
+          options: ["2", "3", "4", "5"],
+          correct: 1,
+          explanation: "1056 ÷ 23 = 45.91... Next multiple is 46. 46 × 23 = 1058. So add 2"
+        },
+        {
+          question: "Find the odd one out: 2, 3, 5, 7, 9, 11, 13",
+          options: ["2", "3", "9", "11"],
+          correct: 2,
+          explanation: "All numbers except 9 are prime numbers"
+        },
+        {
+          question: "If a quarter of a number is 15, then what is the number?",
+          options: ["45", "50", "60", "75"],
+          correct: 2,
+          explanation: "If 1/4 of x = 15, then x = 15 × 4 = 60"
+        },
+        {
+          question: "The average age of 3 persons is 50 years. If a new person joins them, the average becomes 45 years. What is the age of the new person?",
+          options: ["30 years", "35 years", "40 years", "25 years"],
+          correct: 0,
+          explanation: "Original sum = 50 × 3 = 150. New sum = 45 × 4 = 180. New person's age = 30"
+        },
+        {
+          question: "What percentage of 60 is 12?",
+          options: ["20%", "25%", "15%", "30%"],
+          correct: 0,
+          explanation: "(12/60) × 100 = 20%"
+        }
+      ]
+    };
+
+    let currentSection = 'technical';
+    let currentQuestion = 0;
+    let scores = {
+      technical: 0,
+      communication: 0,
+      aptitude: 0
+    };
+    let completedSections = {
+      technical: false,
+      communication: false,
+      aptitude: false
+    };
+
+    function initializeQuiz() {
+      currentQuestion = 0;
+      if (!completedSections[currentSection]) {
+        scores[currentSection] = 0;
+      }
+      showQuestion();
+      updateProgress();
+    }
+
+    function showQuestion() {
+      const questionData = quizData[currentSection][currentQuestion];
+      document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1}`;
+      document.getElementById('questionText').textContent = questionData.question;
+      const optionsContainer = document.getElementById('options');
+      optionsContainer.innerHTML = '';
+      
+      questionData.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.className = 'option-btn';
+        button.textContent = option;
+        button.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selectedOption) {
+      const questionData = quizData[currentSection][currentQuestion];
+      const buttons = document.querySelectorAll('.option-btn');
+      
+      buttons.forEach((button, index) => {
+        button.disabled = true;
+        if (index === questionData.correct) {
+          button.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== questionData.correct) {
+          button.classList.add('wrong');
+        }
+      });
+
+      if (selectedOption === questionData.correct) {
+        scores[currentSection]++;
+      }
+
+      // Show explanation
+      const explanationDiv = document.createElement('div');
+      explanationDiv.className = 'mt-3 alert alert-info';
+      explanationDiv.textContent = questionData.explanation;
+      document.getElementById('options').appendChild(explanationDiv);
+
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < quizData[currentSection].length) {
+          showQuestion();
+        } else {
+          completedSections[currentSection] = true;
+          if (allSectionsCompleted()) {
+            showFinalResults();
+          } else {
+            moveToNextSection();
+          }
+        }
+        updateProgress();
+      }, 2000);
+    }
+
+    function allSectionsCompleted() {
+      return Object.values(completedSections).every(completed => completed);
+    }
+
+    function moveToNextSection() {
+      const sections = ['technical', 'communication', 'aptitude'];
+      const currentIndex = sections.indexOf(currentSection);
+      const nextSection = sections[currentIndex + 1];
+      
+      if (nextSection) {
+        currentSection = nextSection;
+        const tabs = document.querySelectorAll('.nav-link');
+        tabs.forEach(tab => {
+          if (tab.getAttribute('data-section') === nextSection) {
+            tab.click();
+          }
+        });
+      }
+    }
+
+    function showFinalResults() {
+      document.getElementById('quizSection').style.display = 'none';
+      const resultSection = document.getElementById('resultSection');
+      resultSection.style.display = 'block';
+      
+      // Display individual section scores
+      Object.keys(scores).forEach(section => {
+        const total = quizData[section].length;
+        const score = scores[section];
+        const percentage = (score / total) * 100;
+        document.getElementById(`${section}Score`).textContent = 
+          `Score: ${score}/${total} (${percentage.toFixed(1)}%)`;
+      });
+
+      // Calculate and display total score
+      const totalScore = Object.values(scores).reduce((a, b) => a + b, 0);
+      const totalQuestions = Object.values(quizData).reduce((a, b) => a + b.length, 0);
+      const totalPercentage = (totalScore / totalQuestions) * 100;
+      document.getElementById('totalScore').textContent = 
+        `Total Score: ${totalScore}/${totalQuestions} (${totalPercentage.toFixed(1)}%)`;
+    }
+
+    function updateProgress() {
+      const progress = (currentQuestion / quizData[currentSection].length) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('progressText').textContent = 
+        `Question ${currentQuestion + 1} of ${quizData[currentSection].length}`;
+    }
+
+    function resetQuiz() {
+      currentSection = 'technical';
+      currentQuestion = 0;
+      scores = {
+        technical: 0,
+        communication: 0,
+        aptitude: 0
+      };
+      completedSections = {
+        technical: false,
+        communication: false,
+        aptitude: false
+      };
+      document.getElementById('quizSection').style.display = 'block';
+      document.getElementById('resultSection').style.display = 'none';
+      
+      // Reset to technical tab
+      const tabs = document.querySelectorAll('.nav-link');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('data-section') === 'technical') {
+          tab.classList.add('active');
+        }
+      });
+      
+      initializeQuiz();
+    }
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeQuiz();
+    });
+
+    // Switch quiz sections
+    document.getElementById('quizTabs').addEventListener('click', (e) => {
+      if (e.target.classList.contains('nav-link') && !completedSections[e.target.getAttribute('data-section')]) {
+        const tabs = document.querySelectorAll('.nav-link');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        e.target.classList.add('active');
+        
+        currentSection = e.target.getAttribute('data-section');
+        initializeQuiz();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
